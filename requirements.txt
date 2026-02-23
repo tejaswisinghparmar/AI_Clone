@@ -1,0 +1,57 @@
+# ──────────────────────────────────────────────────────────────────
+#  AI Clone — Python Dependencies
+# ──────────────────────────────────────────────────────────────────
+#  Arch Linux + Python 3.12+ + CUDA 13.1 + cuDNN 9.19
+#
+#  System packages already installed (pacman):
+#    opencl-nvidia 590.48.01-4
+#    cuda          13.1.1-1
+#    cudnn         9.19.0.56-2
+#    ollama        0.16.3-1
+#    portaudio     1:19.7.0-3
+#    python-pyaudio 0.2.14-5
+#
+#  Install Python deps:
+#    pip install -r requirements.txt
+#
+#  For flash-attn (optional but recommended — halves TTS VRAM):
+#    MAX_JOBS=4 pip install flash-attn --no-build-isolation
+# ──────────────────────────────────────────────────────────────────
+
+# ── Core AI ─────────────────────────────────────────────────────
+ollama>=0.4.7
+faster-whisper>=1.1.1
+transformers>=4.49.0
+qwen-tts>=0.0.2
+silero-vad>=6.0.0
+
+# ── ML Framework (CUDA 13.x — use nightly/cu131 index) ─────────
+# Install torch separately if pip can't resolve against CUDA 13:
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu131
+torch>=2.6.0
+torchaudio>=2.6.0
+
+# ── Audio I/O ───────────────────────────────────────────────────
+# PyAudio is installed system-wide via pacman (python-pyaudio 0.2.14-5)
+# Only install via pip if the system package isn't picked up:
+# PyAudio==0.2.14
+sounddevice>=0.5.1
+soundfile>=0.12.1
+edge-tts>=6.1.0
+
+# ── Utilities ───────────────────────────────────────────────────
+numpy>=1.26.4
+
+# ── Desktop GUI (CustomTkinter) ────────────────────────────────
+customtkinter>=5.2.0
+
+# ── Web Interface (FastAPI — optional, for API mode) ───────────
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+websockets>=13.0
+
+# ── GPU Optimisation (optional) ─────────────────────────────────
+# flash-attn MUST be installed AFTER torch, in a separate command:
+#   MAX_JOBS=4 pip install flash-attn --no-build-isolation
+# Do NOT uncomment — it will fail inside requirements.txt because
+# torch isn't available yet during the build-dependency phase.
