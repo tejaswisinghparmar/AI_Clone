@@ -1,3 +1,6 @@
+## 🎬 Demo
+👉 https://www.youtube.com/watch?v=9LmlSthmiO8
+
 # AI_Clone
 AI_Clone is an end-to-end local voice-and-personality clone. It combines live speech-to-text, an on-device LLM via Ollama, and zero-shot TTS to deliver near-instant speech-to-speech interaction on modest GPUs.
 
