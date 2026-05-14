@@ -86,5 +86,4 @@ Key options in `main.py`:
 - `ears.py`: STT engine (faster-whisper + Silero VAD).
 - `voice.py`: TTS engine (Qwen3-TTS + optional Edge TTS).
 
-## License
-Add a license file if you plan to open-source this project.
+
