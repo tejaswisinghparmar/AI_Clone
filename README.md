@@ -33,7 +33,7 @@ See [requirements.txt](requirements.txt) for Python dependencies.
 ## Setup
 1. Clone and enter the project:
 	```bash
-	git clone <your-repo-url>
+	git clone https://github.com/tejaswisinghparmar/AI_Clone
 	cd AI_Clone-main
 	```
 
