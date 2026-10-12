@@ -52,7 +52,7 @@ See [requirements.txt](requirements.txt) for Python dependencies.
 4. Create your LLM model from the Modelfile:
 	```bash
 	ollama create my-ai-clone -f Modelfile
-	ollama list
+	ollama list 
 	```
 
 5. Add a voice reference clip (recommended):
@@ -62,7 +62,7 @@ See [requirements.txt](requirements.txt) for Python dependencies.
 ## Run
 Terminal mode (VRAM-aware):
 ```bash
-python main.py
+python main.py 
 ```
 
 Desktop GUI:
@@ -87,6 +87,6 @@ Key options in `main.py`:
 - `gui.py`: Desktop UI (CustomTkinter) with streaming and mic control.
 - `brain.py`: Ollama client and conversation memory.
 - `ears.py`: STT engine (faster-whisper + Silero VAD).
-- `voice.py`: TTS engine (Qwen3-TTS + optional Edge TTS).
+- `voice.py`: TTS engine (Qwen3-TTS + optional Edge TTS). 
 
 
